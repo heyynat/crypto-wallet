@@ -1,0 +1,15 @@
+current directory: /home/natali/Projects/Projects-Ruby/Modulo 3/crypto_wallet/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/home/natali/.rbenv/versions/3.1.1/bin/ruby -I /home/natali/.rbenv/versions/3.1.1/lib/ruby/3.1.0 -r ./siteconf20220709-84608-pt07xo.rb extconf.rb
+creating Makefile
+
+current directory: /home/natali/Projects/Projects-Ruby/Modulo 3/crypto_wallet/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/natali/Projects/Projects-Ruby/Modulo 3/crypto_wallet/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/natali/Projects/Projects-Ruby/Modulo 3/crypto_wallet/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20220709-84608-j7e0v3/skiptrace/internal
