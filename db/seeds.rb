@@ -13,7 +13,7 @@ coins = [
         url_image: "https://logos-world.net/wp-content/uploads/2020/08/Bitcoin-Emblem.png" },
       {
         description: "Ethereum",
-        acronym: "ETC",
+        acronym: "ETH",
         url_image: "https://download.logo.wine/logo/Ethereum/Ethereum-Logo.wine.png"
       },
       {
