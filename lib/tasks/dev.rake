@@ -33,14 +33,16 @@ namespace :dev do
 
   desc "Cadastra Tipos de Mineração"
   task add_mining_types: :environment do
+    puts "Cadastrando Tipos de Mineração..."
     mining_types = [
-      { name: "Proof of Work", acronym: "PoW" },
-      { name: "Proof of Stake", acronym: "PoS" },
-      { name: "Proof of Capacity", acronym: "PoC" }
+      { description: "Proof of Work", acronym: "PoW" },
+      { description: "Proof of Stake", acronym: "PoS" },
+      { description: "Proof of Capacity", acronym: "PoC" }
     ]
 
     mining_types.each do |mining_type|
       MiningType.find_or_create_by!(mining_type)
     end
+    puts "Cadastro de Tipos de Mineração concluído!"
   end
 end
