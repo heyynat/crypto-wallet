@@ -2,6 +2,8 @@ namespace :dev do
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
     puts %x(rails db:drop db:create db:migrate db:seed)
+    puts %x(rails dev:add_mining_types)
+    puts %x(rails dev:add_coins)
   end
 
   desc "Cadastra Moedas"
@@ -11,16 +13,20 @@ namespace :dev do
       {
         description: "Bitcoin",
         acronym: "BTC",
-        url_image: "https://logos-world.net/wp-content/uploads/2020/08/Bitcoin-Emblem.png" },
+        url_image: "https://logos-world.net/wp-content/uploads/2020/08/Bitcoin-Emblem.png",
+        mining_type: MiningType.find_by(acronym: "PoW")
+      },
       {
         description: "Ethereum",
         acronym: "ETH",
-        url_image: "https://download.logo.wine/logo/Ethereum/Ethereum-Logo.wine.png"
+        url_image: "https://download.logo.wine/logo/Ethereum/Ethereum-Logo.wine.png",
+        mining_type: MiningType.all.sample
       },
       {
         description: "Dash",
         acronym: "DASH",
-        url_image: "https://cryptologos.cc/logos/dash-dash-logo.png"
+        url_image: "https://cryptologos.cc/logos/dash-dash-logo.png",
+        mining_type: MiningType.all.sample
       }
     ]
 
