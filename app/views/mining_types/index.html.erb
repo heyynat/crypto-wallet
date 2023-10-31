@@ -1,14 +1,29 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Mining types</h1>
+<h1>Tipos de Mineração</h1>
 
-<div id="mining_types">
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th><%= @mining_types.human_attribute_name(:description) %></th>
+    <th><%= @mining_types.human_attribute_name(:acronym) %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
   <% @mining_types.each do |mining_type| %>
-    <%= render mining_type %>
-    <p>
-      <%= link_to t('links.show'), mining_type %>
-    </p>
+    <tr>
+      <td><%= mining_type.description %></td>
+      <td><%= mining_type.acronym %></td>
+      <th><%= link_to t('links.show'), mining_type %></th>
+      <th><%= link_to t('links.edit'), edit_mining_type_path(mining_type) %></th>
+      <th><%= link_to t('links.delete'), mining_type, method: :delete %></th>
+    </tr>
   <% end %>
-</div>
+  </tbody>
+</table>
+
+<br>
 
 <%= link_to "New mining type", new_mining_type_path %>
