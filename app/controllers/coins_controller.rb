@@ -1,5 +1,6 @@
 class CoinsController < ApplicationController
   before_action :set_coin, only: %i[ show edit update destroy ]
+  before_action :set_mining_types_options, only: [:new, :edit, :update]
 
   # GET /coins or /coins.json
   def index
@@ -59,6 +60,11 @@ class CoinsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def set_mining_types_options
+      @mining_types_options = MiningType.all.pluck(:description, :id)
+    end
+
     def set_coin
       @coin = Coin.find(params[:id])
     end
